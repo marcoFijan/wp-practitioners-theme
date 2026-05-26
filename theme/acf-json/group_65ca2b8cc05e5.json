@@ -1,0 +1,222 @@
+{
+    "key": "group_65ca2b8cc05e5",
+    "title": "Tekst | Afbeelding",
+    "fields": [
+        {
+            "key": "field_65ca2b8cc3947",
+            "label": "Volgorde",
+            "name": "order",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "txt_img": "Tekst | Afbeelding",
+                "img_txt": "Afbeelding | Tekst"
+            },
+            "default_value": "",
+            "return_format": "array",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "allow_null": 0,
+            "acfe_permissions": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_69e60948df8ff",
+            "label": "Achtergrondkleur",
+            "name": "bg_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "Wit",
+                "red": "Rood",
+                "blue": "Blauw",
+                "yellow": "Geel"
+            },
+            "default_value": "",
+            "return_format": "array",
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65ca2b8cc394a",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "columns": "6\/12",
+            "endpoint": 0,
+            "acfe_permissions": ""
+        },
+        {
+            "key": "field_65ca2b8cc394c",
+            "label": "Tekst",
+            "name": "txt",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_65ca2b8cc394f",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "acfe_settings": "",
+            "acfe_validate": "",
+            "acfe_permissions": ""
+        },
+        {
+            "key": "field_65ca2b8cc3951",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "columns": "6\/12",
+            "endpoint": 0,
+            "acfe_permissions": ""
+        },
+        {
+            "key": "field_65ca2b8cc3954",
+            "label": "Afbeelding",
+            "name": "img",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "square-sm"
+        },
+        {
+            "key": "field_69dc9e57aece9",
+            "label": "Afbeelding linksboven",
+            "name": "img_small",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Optionele afbeelding die klein linksboven bovenop de primaire afbeelding staat.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
+    "acfe_note": "",
+    "modified": 1776683382
+}

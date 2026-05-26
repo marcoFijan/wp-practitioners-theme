@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_64f04380c7183",
+    "title": "Contactgegevens",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Contactgegevens",
+    "menu_slug": "options-contact",
+    "parent_slug": "options-custom",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": null,
+    "redirect": false,
+    "description": "",
+    "update_button": "Updaten",
+    "updated_message": "Opties bijgewerkt",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "options_contact",
+    "autoload": 0,
+    "_parent": 982,
+    "modified": 1693467538
+}

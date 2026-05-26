@@ -1,0 +1,147 @@
+{
+    "key": "group_69dca36d5d165",
+    "title": "Agenda",
+    "fields": [
+        {
+            "key": "field_69dca3e881dc9",
+            "label": "Tekst",
+            "name": "txt",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Gecentreerde tekst bovenaan",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_69dca36d81dc7",
+            "label": "Toon agendapunten",
+            "name": "shown_agenda_items",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Agenda kunnen toegevoegd worden door in de linker zwarte balk te klikken op 'Agenda' > 'Voeg nieuw agendapunt toe'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all": "Alle agendapunten",
+                "selected": "Selecteer agendapunten"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_69dca3b781dc8",
+            "label": "Agendapunten",
+            "name": "agenda_items",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69dca36d81dc7",
+                        "operator": "==",
+                        "value": "selected"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "agenda"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_69dca40481dca",
+            "label": "Bekijk alle agendapunten tekst",
+            "name": "txt_show_all",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Gecentreerde tekst bovenaan",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Bekijk gehele agenda",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
+    "acfe_note": "",
+    "modified": 1776409480
+}

@@ -1,0 +1,362 @@
+{
+    "key": "group_69dc9b05b3aa2",
+    "title": "Hero Home",
+    "fields": [
+        {
+            "key": "field_69dc9b06e97c9",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "columns": "6\/12",
+            "endpoint": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69dc9b19e97cb",
+            "label": "Tekst",
+            "name": "txt",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_69dcb5663af15",
+            "label": "Bekijk video tekst",
+            "name": "show_video_txt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69dc9c8410b09",
+            "label": "Thumbnail (1080 x 1920)",
+            "name": "featured_thumbnail",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Afbeelding die getoond wanneer de video niet afgespeeld kan worden of de video nog aan het laden is.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "landscape"
+        },
+        {
+            "key": "field_69dce1206903d",
+            "label": "Video bron",
+            "name": "video_source",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "local": "Lokaal",
+                "yt": "YouTube"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_69dc9b24e97cc",
+            "label": "Video (1080 x 1920)",
+            "name": "featured_video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Knop die video opent in een popup",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69dce1206903d",
+                        "operator": "==",
+                        "value": "local"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "min_size": "",
+            "max_size": 100,
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "library": "all"
+        },
+        {
+            "key": "field_69dce1716903e",
+            "label": "Youtube ID",
+            "name": "yt_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Plaats hier ALLEEN het youtube ID. Dit is de code achter ?v=. \r\n\r\nyoutube.com\/watch?v=dQw4w9WgXcQ word dQw4w9WgXcQ",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69dce1206903d",
+                        "operator": "==",
+                        "value": "yt"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69dc9ce910b0a",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69dc9b18e97ca",
+            "label": "(Column 6\/12)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "columns": "6\/12",
+            "endpoint": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69dc9b84e97cd",
+            "label": "Video (500 x 500)",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Een korte kleine video die automatisch afspeelt. Geluid wordt niet afgespeeld",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "min_size": "",
+            "max_size": 10,
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "library": "all"
+        },
+        {
+            "key": "field_69dc9be0e97ce",
+            "label": "Thumbnail (500 x 500)",
+            "name": "thumbnail",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Een afbeelding die getoond wanneer de video niet afgespeeld kan worden of de video nog aan het laden is.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "webp",
+            "allow_in_bindings": 0,
+            "preview_size": "square-sm"
+        },
+        {
+            "key": "field_69dc9cfd10b0b",
+            "label": "Afbeelding (300 x 300)",
+            "name": "img",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Een afbeelding achter de video",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "id",
+            "library": "all",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 1,
+            "mime_types": "webp",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69dc9d6a10b0c",
+            "label": "(Column Endpoint)",
+            "name": "",
+            "aria-label": "",
+            "type": "acfe_column",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "endpoint": 1,
+            "allow_in_bindings": 0,
+            "columns": "6\/12"
+        },
+        {
+            "key": "field_69dc9d6f10b0d",
+            "label": "Scrolltekst",
+            "name": "scrolltext",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text naast scroll icoon om aan te geven dat er naar beneden gescrold kan worden",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Ontdek Midden-Brabant",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "Hero",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
+    "acfe_note": "",
+    "modified": 1776083473
+}
