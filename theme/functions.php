@@ -35,9 +35,9 @@ function custom_login_logo()
 { ?>
   <style type="text/css">
     #login h1 a {
-      background-size: 0px 0px;
-      width: 0px;
-      height: 0px;
+      background-size: 273px 93px;
+      width: 273px;
+      height: 93px;
     }
   </style>
 <?php }
@@ -156,6 +156,27 @@ function custom_tinymce_settings($settings)
   $settings['body_class'] = 'prose font-sans';
   $block_formats['block_formats'] = 'Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6';
   $settings['block_formats'] = implode(';', $block_formats);
+
+  // List style formats migrated from old logic
+  $style_formats = [
+    [
+      'title' => 'List',
+      'items' => [
+        [
+          'title' => 'Verified',
+          'selector' => 'ul',
+          'attributes' => ['class' => 'verified_user'],
+        ],
+        [
+          'title' => 'Check',
+          'selector' => 'ul',
+          'attributes' => ['class' => 'check'],
+        ],
+      ]
+    ],
+  ];
+  $settings['style_formats'] = json_encode($style_formats);
+
   return $settings;
 }
 add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
@@ -165,6 +186,14 @@ add_filter('tiny_mce_before_init', 'custom_tinymce_settings');
  */
 add_filter('default_page_template_title', function () {
   return 'Selecteer een template in de rechter zijbalk';
+});
+
+/**
+ * Custom Rank Math separator
+ */
+add_filter('rank_math/frontend/breadcrumb/settings', function ($settings) {
+  $settings['separator'] = '<i class="separator"></i>';
+  return $settings;
 });
 
 /**
@@ -213,3 +242,70 @@ function custom_acf_layout_thumbnail($thumbnail, $field, $layout)
   return get_stylesheet_directory_uri() . '/assets/images/blocks/' . $image_name . '.webp';
 }
 add_filter('acfe/flexible/thumbnail/name=flexible_content', 'custom_acf_layout_thumbnail', 10, 3);
+
+/* --------------------------------------------------------------------------
+ * MIGRATED LOGIC
+ * -------------------------------------------------------------------------- */
+
+/**
+ * Hide default posts & clear up dashboard
+ */
+add_action('admin_menu', function () {
+  remove_menu_page('edit.php');
+});
+
+add_action('wp_before_admin_bar_render', function () {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_node('new-post');
+});
+
+add_action('wp_dashboard_setup', function () {
+  remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+}, 999);
+
+/**
+ * Filter agenda posts to show only future events & sort by date
+ */
+add_filter('the_posts', function ($posts, $query) {
+  if (is_admin() || !$query->is_main_query() || !is_post_type_archive('agenda')) {
+    return $posts;
+  }
+
+  $today = date('Ymd');
+  $filtered_posts = [];
+
+  foreach ($posts as $post) {
+    $event_date = get_field('date', $post->ID);
+
+    if (!$event_date) {
+      continue;
+    }
+
+    if ($event_date >= $today) {
+      $filtered_posts[] = $post;
+    }
+  }
+
+  usort($filtered_posts, function ($a, $b) {
+    $dateA = get_field('date', $a->ID);
+    $dateB = get_field('date', $b->ID);
+    return strcmp($dateA, $dateB);
+  });
+
+  return $filtered_posts;
+}, 10, 2);
+
+/**
+ * Prevent single posts from having accessible URLs.
+ * Redirects gp and agenda single pages back to their archives.
+ */
+add_action('template_redirect', function () {
+  if (is_singular('gp')) {
+    wp_redirect(home_url('/huisartsen/'), 301);
+    exit;
+  }
+  if (is_singular('agenda')) {
+    wp_redirect(home_url('/agenda/'), 301);
+    exit;
+  }
+});
