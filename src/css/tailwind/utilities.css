@@ -1,0 +1,27 @@
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-(--container-max-width) px-4 lg:px-16;
+    --container-max-width: 100%;
+
+    @media (width >= theme(--breakpoint-sm)) {
+      --container-max-width: 34.25rem;
+    }
+    @media (width >= theme(--breakpoint-md)) {
+      --container-max-width: 45.5rem;
+    }
+    @media (width >= theme(--breakpoint-lg)) {
+      --container-max-width: 60.5rem;
+    }
+    @media (width >= theme(--breakpoint-xl)) {
+      --container-max-width: 71.75rem;
+    }
+    @media (width >= theme(--breakpoint-2xl)) {
+      --container-max-width: 103.5rem;
+    }
+  }
+
+  .screen-reader-response,
+  .screen-reader-text {
+    @apply sr-only;
+  }
+}

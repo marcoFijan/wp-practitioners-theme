@@ -1,0 +1,17 @@
+/* 1. ALL Imports first */
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+@import "./tailwind/theme.css";
+@import "./modules/fonts.css";
+
+/* 2. Config goes next */
+@config "./tailwind.config.js";
+
+/* 3. TinyMCE Specific Overrides */
+.mce-content-body :not(p).text-white {
+  @apply text-black;
+}
+
+.mce-content-body :not(p).text-stroke {
+  @apply ![-webkit-text-stroke-color:_oklch(0_0_0)];
+}

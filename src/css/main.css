@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@import "./tailwind/theme.css";
+@import "./tailwind/base.css";
+@import "./tailwind/utilities.css";
+@import-glob "./modules/**/*.css";
+
+@config "./tailwind.config.js";
+@source "../../theme/**/*.php";
+@source "../js/**/*.js";

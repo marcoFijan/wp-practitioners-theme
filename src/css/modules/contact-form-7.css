@@ -1,0 +1,164 @@
+form {
+  @apply grid gap-6;
+
+  /* --- CF7 Status Messages --- */
+  .wpcf7-not-valid-tip {
+    @apply mt-1 block text-sm font-medium text-red-500;
+  }
+  .wpcf7-response-output {
+    @apply mt-4 block rounded-md bg-gray-50 border border-gray-200 px-6 py-4 text-sm text-gray-900;
+    &:empty {
+      @apply hidden;
+    }
+  }
+
+  /* --- Base Form Layout --- */
+  .form-row {
+    @apply flex flex-col md:flex-row gap-6 w-full;
+  }
+
+  .form-group {
+    @apply relative w-full;
+
+    &.form-half {
+      @apply md:w-1/2;
+    }
+
+    /* --- Floating Labels --- */
+    &.form-floating {
+      &:has(input:focus, input:not(:placeholder-shown), textarea:focus, textarea:not(:placeholder-shown), select:focus, select.has-value) {
+        label {
+          @apply top-2 left-4 scale-75 text-gray-500;
+        }
+      }
+
+      label {
+        @apply absolute top-4 left-4 z-10 origin-top-left px-1 text-base text-gray-400 transition-all duration-200 pointer-events-none whitespace-nowrap overflow-hidden text-ellipsis;
+      }
+
+      input,
+      select {
+        @apply pt-6 pb-2 px-5;
+      }
+
+      textarea {
+        @apply pt-7 pb-3 px-5;
+      }
+    }
+
+    /* --- Radio Buttons (Pill Style) --- */
+    &.form-radio {
+      @apply grid gap-3;
+
+      .wpcf7-radio {
+        @apply grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4;
+
+        .wpcf7-list-item {
+          @apply m-0 flex;
+
+          label {
+            @apply relative flex w-full cursor-pointer;
+
+            input {
+              @apply absolute opacity-0 w-0 h-0;
+            }
+
+            span {
+              @apply flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50;
+            }
+
+            &:has(input:checked) span {
+              @apply border-blue-600 bg-blue-50 text-blue-700;
+            }
+          }
+        }
+      }
+    }
+
+    /* --- Checkboxes / Acceptance --- */
+    &.form-acceptance {
+      label {
+        @apply flex cursor-pointer items-start gap-3 text-sm text-gray-700 m-0;
+
+        input[type="checkbox"] {
+          @apply mt-0.5 h-5 w-5 shrink-0 appearance-none rounded border border-gray-300 bg-white transition-colors cursor-pointer focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+
+          &:checked {
+            @apply border-blue-600 bg-blue-600;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-position: center;
+          }
+        }
+      }
+    }
+
+    /* --- File Uploads --- */
+    &.form-file {
+      &:has(.wpcf7-not-valid-tip) .field-wrapper {
+        @apply border-red-500;
+      }
+
+      .field-wrapper {
+        @apply flex items-center justify-center rounded-md border-2 border-dashed border-gray-300 p-8 transition-colors hover:bg-gray-50 [&.file-added]:border-blue-500;
+      }
+
+      .wpcf7-form-control-wrap {
+        input {
+          @apply absolute inset-0 h-full w-full opacity-0 cursor-pointer;
+        }
+      }
+
+      /* Optional: Clean up Codedropz if you use it */
+      .codedropz-upload-wrapper {
+        .codedropz-upload-container {
+          @apply border-none p-0;
+        }
+      }
+    }
+  }
+
+  /* --- Base Input Styles (Consolidated) --- */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+  textarea,
+  select {
+    @apply block w-full rounded-md border border-gray-300 bg-white p-4 text-base text-gray-900 transition-colors outline-none placeholder:text-transparent focus:border-blue-600 focus:ring-1 focus:ring-blue-600 [&.wpcf7-not-valid]:border-red-500 [&.wpcf7-not-valid]:focus:ring-red-500;
+  }
+
+  textarea {
+    @apply resize-y min-h-[120px];
+  }
+
+  select {
+    @apply appearance-none cursor-pointer bg-[right_1rem_center] bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-opacity='0.4' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 0.625rem;
+
+    &:invalid {
+      @apply text-gray-400;
+    }
+  }
+
+  /* --- Submit Button & Spinner --- */
+  .form-submit {
+    @apply relative mt-2 w-full md:w-auto md:ml-auto;
+
+    .wpcf7-submit {
+      @apply inline-flex w-full cursor-pointer items-center justify-center rounded-md bg-blue-600 px-8 py-4 text-base font-medium text-white transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 md:w-auto;
+    }
+
+    .wpcf7-spinner {
+      @apply absolute top-1/2 left-1/2 size-6 -mt-3 -ml-3 animate-spin rounded-full border-2 border-white/30 border-t-white opacity-0 transition-opacity;
+    }
+
+    /* Handle spinner state assuming CF7 adds a subclass or you target form.submitting */
+    &:has(.wpcf7-spinner.is-active) {
+      .wpcf7-submit {
+        @apply text-transparent;
+      }
+      .wpcf7-spinner {
+        @apply opacity-100;
+      }
+    }
+  }
+}
